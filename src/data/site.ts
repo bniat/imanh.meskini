@@ -1,7 +1,7 @@
 export const site = {
-  name: 'Iman Hasnaoui Meskini',
+  name: 'Iman Hasnaouia Meskini',
   firstName: 'Iman',
-  lastName: 'Hasnaoui Meskini',
+  lastName: 'Hasnaouia Meskini',
   /** Initials for the favicon-style monogram shown while there is no profile photo. */
   initials: 'IHM',
   title: 'Cybersecurity Researcher & PhD Candidate',
