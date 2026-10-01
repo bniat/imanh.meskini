@@ -39,4 +39,38 @@ const publications = defineCollection({
     }),
 });
 
-export const collections = { publications };
+/** YAML turns "2026-03-17" into a Date; keep dates as "YYYY-MM[-DD]" strings. */
+const isoDay = (v: unknown) => (v instanceof Date ? v.toISOString().slice(0, 10) : v);
+
+const activities = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/activities' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      /** One-line version used on the home page. */
+      summary: z.string(),
+      /** "YYYY-MM-DD", or "YYYY-MM" when the exact day is not relevant. */
+      date: z.preprocess(isoDay, z.string().regex(/^\d{4}-\d{2}(-\d{2})?$/)),
+      /** Last day of multi-day events ("YYYY-MM-DD"). */
+      endDate: z.preprocess(isoDay, z.string().regex(/^\d{4}-\d{2}-\d{2}$/)).optional(),
+      category: z.enum([
+        'award',
+        'talk',
+        'conference',
+        'publication',
+        'research-stay',
+        'competition',
+        'training',
+        'event',
+        'teaching',
+        'other',
+      ]),
+      location: z.string().optional(),
+      image: image().optional(),
+      links: z.array(z.object({ label: z.string(), href: z.url() })).default([]),
+      /** File names of related publications, e.g. "2025-ijis-digital-twin-communities". */
+      publications: z.array(z.string()).default([]),
+    }),
+});
+
+export const collections = { publications, activities };
