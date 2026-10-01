@@ -1,0 +1,79 @@
+<!doctype html>
+<!-- Source of public/og.png (1200×630), the preview shown when the site is shared.
+     Rendered by scripts/og-image.mjs; edit here and run `npm run og:image`. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;700&display=swap">
+  <style>
+    * { margin: 0; box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; overflow: hidden; }
+    body {
+      position: relative;
+      font-family: 'Source Sans 3', sans-serif;
+      background:
+        radial-gradient(circle at 78% 45%, rgb(127 176 227 / 0.35), transparent 55%),
+        linear-gradient(135deg, #0d1520, #1b3a5c);
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Faint dot grid, fading out from behind the portrait. */
+    .dots {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgb(169 203 239 / 0.22) 1.3px, transparent 1.6px);
+      background-size: 26px 26px;
+      background-position: 7px 7px;
+      -webkit-mask-image: radial-gradient(circle at 70% 40%, #000, transparent 70%);
+    }
+    .text { position: absolute; left: 80px; top: 148px; }
+    .eyebrow {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      color: #7fb0e3;
+    }
+    h1 {
+      margin-top: 22px;
+      font-size: 78px;
+      line-height: 84px;
+      font-weight: 300;
+      color: #e5ebf2;
+    }
+    h1 strong { display: block; font-weight: 700; color: #fff; }
+    .rule { width: 90px; height: 4px; margin: 30px 0 26px; border-radius: 2px; background: #7fb0e3; }
+    .line { font-size: 27px; line-height: 38px; color: #b4c0cd; }
+    .url { margin-top: 48px; font-size: 22px; color: #7f8d9e; }
+    /* Monogram in place of a portrait (swap for an <img> once there is a photo). */
+    .monogram {
+      position: absolute;
+      right: 80px;
+      top: 165px;
+      width: 300px;
+      height: 300px;
+      display: grid;
+      place-items: center;
+      border-radius: 28px;
+      font-size: 104px;
+      font-weight: 300;
+      letter-spacing: 4px;
+      color: #fff;
+      background:
+        radial-gradient(rgb(255 255 255 / 0.18) 1.3px, transparent 1.6px) 0 0 / 22px 22px,
+        linear-gradient(135deg, #1b3a5c, #3d6591);
+      box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="dots"></div>
+  <div class="text">
+    <p class="eyebrow">CYBERSECURITY RESEARCHER · PHD CANDIDATE</p>
+    <h1>Iman <strong>Hasnaoui Meskini</strong></h1>
+    <div class="rule"></div>
+    <p class="line">Adversarial AI · Cybersecurity Digital Twins</p>
+    <p class="line">NICS Lab, University of Málaga</p>
+    <p class="url">bniat.github.io/imanh.meskini</p>
+  </div>
+  <div class="monogram">IHM</div>
+</body>
+</html>
